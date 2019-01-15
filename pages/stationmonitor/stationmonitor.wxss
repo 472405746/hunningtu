@@ -1,0 +1,73 @@
+.list-content{
+  padding: 0 20rpx;
+}
+.bookitem{
+  background: #fff;
+  border-radius: 20rpx; 
+  margin: 20rpx 0;
+  padding: 20rpx 20rpx;
+  color: #555;
+  box-shadow: 0 0 20rpx #eee; 
+}
+.bookitem .name{
+  font-size: 29rpx;
+  padding-bottom: 10rpx;
+  font-weight: bold;
+}
+.bookitem .author{
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+.bookitem .other-infos{
+  display: flex;
+  flex-direction: row;
+  font-size: 27rpx;
+  /*color: #b2b2b2;*/
+  margin-top:5px;
+}
+.bookitem .other-infos .info-item{
+  margin-right: 11rpx;
+}
+
+
+.item-info-day{
+  width:21%;
+}
+.item-info-month{
+  width: 27%;
+}
+
+.item-info-time{
+  width: auto;
+}
+
+.item-info-offline
+{
+  color: red;
+  /*background-color: red;*/
+}
+.item-info-online
+{
+  color: lawngreen;
+}
+
+.bookitem .other-infos .overflow{
+  max-width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.bookitem-refhshtime{
+   font-size: 29rpx;
+}
+.other-infos-content{
+  display: flex;
+}
+
+.item-loading{
+  width: 28rpx;
+  height: 28rpx;
+}

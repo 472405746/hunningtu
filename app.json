@@ -1,0 +1,23 @@
+{
+    "pages": [
+      "pages/register/register",
+        "pages/status/status",
+        "pages/noauth/index",
+        
+        "pages/main/index",
+        "pages/stationmonitor/stationmonitor",
+        "pages/msitehistroy/msitehistroy",
+        "pages/daydetail/daydetail",
+        "pages/month/month",
+        "pages/index/index",
+        "pages/chat/chat",
+        "pages/day/day"
+        
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#333",
+        "navigationBarTitleText": "砼业生产监控系统",
+        "navigationBarTextStyle": "white"
+    }
+}

@@ -1,0 +1,5 @@
+<view style='width:100%;height:100%;text-align:center;' class="picture-2">
+  <image style='margin-top:50px; width:50.5%;' class="infoImage" src="/images/search-fail.png" mode='widthFix'>
+  </image>
+  <view style='margin-top:20px;'>您没有权限，请联系管理员开通权限</view>
+  </view>

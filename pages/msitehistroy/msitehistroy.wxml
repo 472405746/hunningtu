@@ -1,0 +1,58 @@
+<view class="search-content">
+  <form class="form" bindsubmit="formSubmit">
+    <view class="form-in">
+      <view class="m-search">
+        <icon class="icon-search" type="search" size="14" />
+        <picker class="search-inp" mode="selector" value="{{index}}" range="{{companyNames}}" bindchange="bindCompanyChange">
+          搅拌站:{{companyName}}
+        </picker>
+        <icon class="icon-search-station" type="search" size="14" />
+        <picker class="search-inp" mode="selector" range="{{stations}}" bindchange="bindStationChange" value="{{index}}">
+          <view class="picker">
+            搅拌楼: {{station}}
+          </view>
+        </picker>
+        <icon class="icon-cancel" bindtap="clearStationInput" type="clear" size="16" color="#eee" />
+        <icon class="icon-search-date" type="search" size="14" />
+        <picker class="search-inp" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            日期: {{dateTime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </form>
+</view>
+ <block wx:if="{{status=='success'}}">
+<view class="bookitem">
+  合计送料：{{totalAmount}}
+</view>
+</block>
+<scroll-view class="scroll-content" scroll-y="true" style="height:{{scrollHeight}}px" scroll-top="{{scrollTop}}" bindscrolltolower="{{dropLoadFunc}}" lower-threshold="30">
+  <view class="list-content">
+    <block wx:if="{{status=='success'}}">
+      <block wx:for="{{booksList}}">
+        <view class="bookitem">
+          <view class="name">{{item.CompanyName}}:{{item.SiteName}} 搅拌楼:{{item.StationCode}}</view>
+          <view class="other-infos">
+            <view class="info-item">本次送料:{{item.CurAmount}}</view>
+            <view class="info-item">累计送料:{{item.Amount}}</view>
+          </view>
+          <view class="other-infos">
+            <view class="info-item">送料时间:{{item.ServerGatherTime}}</view>
+          </view>
+          <view class="other-infos">
+            <view class="info-item">数据上传时间:{{item.LocalGatherTime}}</view>
+          </view>
+          <view class="other-infos">
+            <view class="info-item other-infos-project">工地:{{item.OriginalName}}</view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view wx:if="{{status=='fail'}}">
+      <!--<image mode="aspectFit" style="width:100rpx;height: 250rpx; margin: 200rpx auto 50rpx auto" class="fail-img" src="../../images/search-fail.png"></image>-->
+      <text class="fail-txt" style="margin: 200rpx auto 50rpx auto">没有找到符合条件的数据...</text>
+    </view>
+  </view>
+</scroll-view>

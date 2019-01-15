@@ -1,0 +1,25 @@
+<view class="list-content">
+ <view class="bookitem bookitem-refhshtime">上次刷新时间:
+ {{refeshTime}}
+ <image hidden="{{loadingstatus}}" class="item-loading" src="../../images/loading.gif"></image>
+ </view>
+  <block wx:for="{{booksList}}">
+    <view class="bookitem">
+      <view class="name">{{item.CompanyName}}</view>
+      <view class="other-infos" wx:for="{{item.StationMonitorDetailModels}}">
+        <block wx:if="{{item.IsOffLine==true}}">
+            <view class="info-item item-info-offline item-info-station">{{item.StationCode}}#</view>
+            <view class="info-item item-info-offline item-info-day">当日{{item.TodayAmount}}</view>
+            <view class="info-item item-info-offline item-info-month">当月{{item.MonthAmount}}</view>
+            <view class="info-item item-info-offline item-info-time">时间{{item.LatelyGatherTime}}</view>
+        </block>
+        <block wx:else>
+          <view class="info-item item-info-online item-info-station">{{item.StationCode}}#</view>
+          <view class="info-item item-info-online item-info-day">当日{{item.TodayAmount}}</view>
+          <view class="info-item item-info-online item-info-month">当月{{item.MonthAmount}}</view>
+          <view class="info-item item-info-online item-info-time">时间{{item.LatelyGatherTime}}</view>
+        </block>
+        </view>
+      </view>
+  </block>
+  </view>

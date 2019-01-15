@@ -1,0 +1,10 @@
+page{
+   height:50%
+}
+.imagesize{
+ display:flex;
+ height: 100%;
+ /* width: 400rpx; */
+ justify-content: center;
+ align-items:center;
+}

@@ -1,0 +1,26 @@
+<view class="index">
+ <!-- <view class='countDown'>倒计时：<text style='color:red'>{{countDownNum}}</text>s</view> -->
+ <view class="bookitem bookitem-refhshtime"  style='font-size:30rpx; margin-top:10rpx; margin-left:10rpx;' >上次数据更新时间:
+ {{refeshTime}}
+ <image hidden="{{loadingstatus}}" class="item-loading" src="../../images/loading.gif"></image>
+ </view>
+  <view class="body">  
+      <view class="widgets__item" wx:for="{{data}}">
+        <view id="view" class="widgets__info">
+          <view style='width:10%' class='title'>{{item.CompanyName}}</view>
+          <view class="container" class='text' style='width:100%'>
+            <view class="table">
+              <block wx:for="{{item.StationDetaiModels}}" wx:for-item="station" wx:key="station">
+                <view class="tr  {{station.IsOnline==true?'bg-g':'bg-g-offline'}} " style='margin-top:2px;'>
+                  <view class="td" >{{station.StationCode}}#</view>
+                  <view class="td" >日:</view>
+                  <view class="td" style='display:block;width:30px;' >{{station.DayAmount}} </view>
+                  <view class="td">{{station.LastExecTime}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>

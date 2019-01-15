@@ -1,0 +1,35 @@
+<import src="../common/header.wxml" />
+<view class="body">
+  <view class="section" style="margin:20rpx;padding:20rpx">
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        日期: {{date}}
+      </view>
+    </picker>
+  </view>
+  <view class="container section">
+    <view class="title">
+      <view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+      {{chartTitle}}
+    </view>
+    <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+  <block wx:if="{{tablevisiable}}">
+    <view class="table section">
+      <view class="tr bg-w">
+        <view class="th">搅拌站</view>
+        <view class="th">当日方量(方)</view>
+      </view>
+      <block wx:for="{{listData}}" wx:key="{{code}}">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.CompanyName}}</view>
+          <view class="td">{{item.Amount}}</view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.CompanyName}}</view>
+          <view class="td">{{item.Amount}}</view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

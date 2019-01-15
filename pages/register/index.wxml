@@ -1,0 +1,13 @@
+<view class="main">
+  <form bindsubmit="formSubmit">
+    <view class="userinfo">
+      <!-- <wx-image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></wx-image> -->
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class="m-login">
+      <input class="login-inp" name='user' focus="true" placeholder-class="inp-place" type="number" maxlength="20" placeholder="请输入手机号" />
+      <input class="login-inp" name='password' placeholder-class="inp-place" password="true" placeholder="邀请码" />
+      <button class="login-btn" loading="{{load}}" disabled="{{isdisabled}}" formType="submit">绑定</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,31 @@
+<view class="search-content">
+  <form class="form" bindsubmit="formSubmit">
+    <view class="form-in">
+      <view class="m-search">
+        <icon class="icon-search" type="search" size="14" />
+        <picker class="search-inp" mode="selector"  value="{{index}}"  range="{{companyNames}}" 
+         bindchange="bindCompanyChange">
+          搅拌站:{{companyName}}
+        </picker>
+        <icon class="icon-search-date" type="search" size="14" />
+        <picker class="search-inp" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            日期: {{dateTime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </form>
+</view>
+<view class="list-content">
+    <block wx:for="{{booksList}}">
+      <view class="bookitem">
+        <view class="name">{{item.CompanyName}}:{{item.SiteName}}</view>
+        <view class="other-infos">
+          <view class="info-item overflow">搅拌楼:{{item.StationCode}}</view>
+          <view class="info-item">出方量:{{item.Amount}}</view>
+          <view class="info-item">车次:{{item.TruckCnt}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
