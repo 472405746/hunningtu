@@ -32,6 +32,7 @@ Page({
       url: `${config.service.host}/WxDayReport/GetAllCompanys`,
       login: false,
       success: function (res) {
+        debugger;
         var companyName = param.companyName;
         if (companyName) {
           that.setData({

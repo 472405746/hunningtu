@@ -1,14 +1,13 @@
 {
     "pages": [
-      "pages/register/register",
+        "pages/register/register",
+        "pages/month/month",
+        "pages/main/index",
         "pages/status/status",
         "pages/noauth/index",
-        
-        "pages/main/index",
         "pages/stationmonitor/stationmonitor",
         "pages/msitehistroy/msitehistroy",
         "pages/daydetail/daydetail",
-        "pages/month/month",
         "pages/index/index",
         "pages/chat/chat",
         "pages/day/day"

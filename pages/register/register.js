@@ -7,7 +7,9 @@ var columnChart = null;
 Page({
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    btnText:'授权登录',
+    btnDisabled:false
   },
   onLoad: function () {
     var that = this;
@@ -15,6 +17,10 @@ Page({
     that.queryUsreInfo();
   },
   bindGetUserInfo: function (e) {
+    this.setData({
+      btnText:'正在授权,请稍候....',
+      btnDisabled:true
+    });
     if (e.detail.userInfo) {
       //微信授权
       wx.login({
@@ -37,6 +43,7 @@ Page({
               'content-type': 'application/json'
             },
             success: function (res) {
+              
               //从数据库获取用户信息
               // that.queryUsreInfo();
               if (res.data.done>=1){
@@ -48,6 +55,10 @@ Page({
                   url: '../noauth/index'
                 })
               }
+              that.setData({
+                btnText: '授权登录',
+                btnDisabled: false
+              });
             }
           });
         }

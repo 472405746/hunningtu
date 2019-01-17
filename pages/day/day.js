@@ -30,7 +30,7 @@ Page({
         };
         qcloud.request({
             url: `${config.service.host}/WxDayReport`,
-            login: true,
+            login: false,
             data: {
                 dateTime: dateTime
             },

@@ -27,16 +27,12 @@ Page({
       //   name:'历次送方量',
       //   url:'msitehistroy'
       // },
-      // {
-      //   name:'状态监控',
-      //   url:'stationmonitor',
-      //   isSplot:true
-      // },
       {
-        name: '机台在线状态',
+        name: '机台实时状态',
         url: 'status',
         isSplot: true
       }
+
       // {
       //   name:'报表',
       //   url:'bill'

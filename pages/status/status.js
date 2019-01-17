@@ -14,7 +14,7 @@ Page({
     var that = this;
     setInterval(function () {
       that.getData();
-    }, 15000);
+    }, 60000);
     // this.countDown();
   },
   // countDown: function () {
@@ -45,7 +45,7 @@ Page({
     // wx.showToast({
     //   title: '正在加载数据....',
     //   icon: 'loading',
-    //   duration: 10000
+    //   duration: 30000
     // });
 
     this.setData({
@@ -81,6 +81,8 @@ Page({
     this.getData();
   },
   onReady: function (e) {
+   
     this.getData();
+    
   },
 });
